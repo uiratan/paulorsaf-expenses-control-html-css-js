@@ -9,7 +9,7 @@ function onChancePassword() {
 }
 
 function isEmailValid() {
-  const email = document.getElementById("email").value;
+  const email = form.email().value;
   if (!email) {
       return false;
   }
@@ -17,50 +17,42 @@ function isEmailValid() {
 }
 
 function toggleEmailErrors() {
-  const email = document.getElementById("email").value;
-
-  if (!email) {
-    document.getElementById("email-required-error").style.display="block";
-  } else {
-    document.getElementById("email-required-error").style.display="none";
-  }
-
-  if (validateEmail(email)) {
-    document.getElementById("email-invalid-error").style.display="none";
-  } else {
-    document.getElementById("email-invalid-error").style.display="block";
-  }
-
+  const email = form.email().value;
+  form.emailRequiredError().style.display = email ? "none" : "block";
+  form.emailInvalidError().style.display = validateEmail(email) ? "none" : "block";
 }
 
 function togglePasswordErrors() {
-  const password = document.getElementById("password").value;
+  const password = form.password().value;
 
-  if (!password) {
-    document.getElementById("password-required-error").style.display="block";
-  } else {
-    document.getElementById("password-required-error").style.display="none";
-  }
-
+  form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
 function toggleButtonsDisabled() {
   const emailValid = isEmailValid();
-  document.getElementById("recover-password-button").disabled = !emailValid;
+  form.recoverPasswordButton().disabled = !emailValid;
 
   const passwordValid = isPasswordValid();
-  document.getElementById("login-button").disabled = !emailValid || !passwordValid;
+  form.loginButton().disabled = !emailValid || !passwordValid;
 }
 
 function isPasswordValid() {
-  const password = document.getElementById("password").value;
+  const password = form.password().value;
   if (!password) {
       return false;
   }
   return true;
 }
 
+const form = {
+  email: () => document.getElementById('email'),
+  emailInvalidError: () => document.getElementById('email-invalid-error'),
+  emailRequiredError: () => document.getElementById('email-required-error'),
 
-function validateEmail(email) {
-  return /\S+@\S+\.\S+/.test(email);
+  password: () => document.getElementById('password'),
+  passwordRequiredError: () => document.getElementById('password-required-error'),
+
+  recoverPasswordButton: () => document.getElementById('recover-password-button'),
+
+  loginButton: () => document.getElementById('login-button')  
 }
