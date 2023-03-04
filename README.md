@@ -1,11 +1,14 @@
 # paulorsaf-expenses-control-html-css-js
 
 # Funcionalidades
-* Status de carregando quando esperando uma promise
-* Usuários com Firebase Authentication
-- Registrar
-- Login 
-- Recuperar senha
+* Status carregando quando o sistema estiver em processamentos
+
+* Gestão de Usuários
+- Cadastro
+- Login
+- Recuperação de senha
+
+* Sessão de usuários
 - Manter logado
 - Logout
 
@@ -14,5 +17,5 @@
 - CSS
 - JavaScript
 
-# Consumo de APIs
-- Firebase - Authentication
+# APIs
+- Firebase Authentication
