@@ -4,8 +4,41 @@ body {
 
 header {
     text-align: right;
+    background: #222525;
+    position: sticky;
+    top: 0;
 }
+
 
 header button {
     width: auto;
 }
+
+ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+ol li {
+    cursor: pointer;
+    background: white;
+    padding: 8px 16px;
+    border-bottom: 1px solid gray;
+}
+
+ol li.expense {
+    border-left:  10px solid red;
+}
+
+ol li.income {
+    border-left:  10px solid green;
+}
+
+ol li:hover {
+    opacity: 0.8;
+}
+
+p {
+    margin: 4px 0;
+}
+

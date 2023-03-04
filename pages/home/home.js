@@ -5,3 +5,5 @@ function logout() {
         alert("Erro ao fazer logout!");
     })
 }
+
+
