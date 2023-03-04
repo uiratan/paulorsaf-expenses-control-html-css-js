@@ -3,6 +3,8 @@
 # Funcionalidades
 - Login com Firebase Authentication
 - Status de carregando quando esperando uma promise
+- Recuperar senha
+- Registrar usuário
 
 # Tecnologias
 - HTML
