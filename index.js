@@ -9,7 +9,19 @@ function onChancePassword() {
 }
 
 function login() {
-  window.location.href = 'pages/home/home.html'
+  firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value)
+    .then(response => {
+      window.location.href = 'pages/home/home.html'
+    }).catch(error => {
+      alert(getErrorMessage(error));
+    });
+}
+
+function getErrorMessage(error) {
+  if (error.code == 'auth/user-not-found') {
+    return 'Usuário não encontrado';
+  }
+  return error.message;
 }
 
 function register() {
@@ -19,7 +31,7 @@ function register() {
 function isEmailValid() {
   const email = form.email().value;
   if (!email) {
-      return false;
+    return false;
   }
   return validateEmail(email);
 }
@@ -47,7 +59,7 @@ function toggleButtonsDisabled() {
 function isPasswordValid() {
   const password = form.password().value;
   if (!password) {
-      return false;
+    return false;
   }
   return true;
 }
@@ -62,5 +74,5 @@ const form = {
 
   recoverPasswordButton: () => document.getElementById('recover-password-button'),
 
-  loginButton: () => document.getElementById('login-button')  
+  loginButton: () => document.getElementById('login-button')
 }
