@@ -1,9 +1,9 @@
-function onChanceEmail() {
+function onChangeEmail() {
   toggleEmailErrors();
   toggleButtonsDisabled();
 }
 
-function onChancePassword() {
+function onChangePassword() {
   togglePasswordErrors();
   toggleButtonsDisabled();
 }
@@ -64,7 +64,6 @@ function toggleEmailErrors() {
 
 function togglePasswordErrors() {
   const password = form.password().value;
-
   form.passwordRequiredError().style.display = password ? "none" : "block";
 }
 
@@ -88,11 +87,8 @@ const form = {
   email: () => document.getElementById('email'),
   emailInvalidError: () => document.getElementById('email-invalid-error'),
   emailRequiredError: () => document.getElementById('email-required-error'),
-
   password: () => document.getElementById('password'),
   passwordRequiredError: () => document.getElementById('password-required-error'),
-
   recoverPasswordButton: () => document.getElementById('recover-password-button'),
-
   loginButton: () => document.getElementById('login-button')
 }
