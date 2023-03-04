@@ -2,6 +2,7 @@
 
 # Funcionalidades
 - Login com Firebase Authentication
+- Status de carregando quando esperando uma promise
 
 # Tecnologias
 - HTML

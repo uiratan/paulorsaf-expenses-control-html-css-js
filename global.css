@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+}
+
+.centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .clear {
   background: transparent;
   border: none;
@@ -24,4 +34,15 @@ button[disabled] {
   color: white;
   background: red;
   display: none;
+}
+
+.loading {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.loading label {
+  font-size: 24px;
 }

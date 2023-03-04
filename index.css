@@ -1,12 +1,10 @@
 body {
   background: rgb(45, 211, 111);   
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   /* height: calc(100vh - 16px); */
-  margin :0px;
+  /* margin :0px; */
 }
+
 form {
   width: 300px;
 }
